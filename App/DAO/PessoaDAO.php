@@ -18,16 +18,30 @@ class PessoaDAO
 	//dsn(data source name)conexao com o mysql
 	$dsn = "mysql:host=localhost:3307;dbname=db_mvc";
 	
-	$conexao = new PDO($dsn, 'root', 'etecjau');
+	$this->conexao = new PDO($dsn, 'root', 'etecjau');
 	
     }
 
-    public function insert()
+    public function insert(PessoaModel $model)
     {
-    
+        $sql = "INSERT INTO pessoa (nome, cpf, data_nascimento) 
+                VALUES (?, ?, ?) "; 
+
+        /*prepare: prepara a string pra executar*/
+        $stmt = $this->conexao->prepare($sql);
+        
+        $stmt->bindValue(1, $model->nome);
+        $stmt->bindValue(2, $model->cpf);
+        $stmt->bindValue(3, $model->data_nascimento);
+
+        //salva no bd
+        $stmt->execute();
+
+
+        
     }
 
-    public function update()
+    public function update(PessoaModel $model)
     {
     
     }

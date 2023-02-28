@@ -8,7 +8,14 @@ class PessoaModel
     //metodo
     public function save()
     {
-	//chamo o arquivo da DAO e passo todos os dados do formularios pra ele
+        //chamo o arquivo da DAO e passo todos os dados do formularios pra ele
+        include 'DAO/PessoaDAO.php';
+
+        //Criando novo objeto
+        $dao = new PessoaDAO();
+
+        //this é a instancia de td meu objeto
+        $dao->insert($this);
     }
 
 }
