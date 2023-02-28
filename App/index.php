@@ -1,5 +1,7 @@
 <?php
 
+/*Se estou usando a classe PessoaController, preciso dar o include*/
+include 'Controller/PessoaController.php';
 
 
 /* 
@@ -18,12 +20,13 @@ switch($url)
 	echo "página inicial";
       break;
 
+      //como são metodos staticos vou chamar com operador de resolução de escopo ::
       case '/pessoa':
-	echo "listagem de pessoa";
+	PessoaController::index();
       break;
 
       case '/pessoa/form':
-	echo "formluario para salvar pessoa";
+	PessoaController::form();
       break;
 
       default:
