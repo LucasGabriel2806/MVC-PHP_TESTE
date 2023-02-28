@@ -16,5 +16,11 @@ class PessoaController
 
     }
 
+    public static function save()
+    {
+	//Despejo da var post
+	var_dump($_POST);
+    }
+
 
 }
