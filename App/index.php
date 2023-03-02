@@ -17,24 +17,24 @@ $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 switch($url)
 {
       case '/':
-	echo "página inicial";
+    	echo "página inicial";
       break;
 
       //como são metodos staticos vou chamar com operador de resolução de escopo ::
       case '/pessoa':
-	PessoaController::index();
+    	PessoaController::index();
       break;
 
       case '/pessoa/form':
-	PessoaController::form();
+    	PessoaController::form();
       break;
 
       case '/pessoa/form/save':
-	PessoaController::save();
+    	PessoaController::save();
       break;
 
       default:
-	echo "Erro 404";
+    	echo "Erro 404";
       break;
 }
 
